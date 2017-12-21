@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-header">
     <div class="container">
-        <a class="navbar-brand" href="#">LaraBlog</a>
+        <a class="navbar-brand" href="{{route('root')}}">LaraBlog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
                 aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,12 +30,14 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span style="margin-right:8px; margin-top:-5px;">
-                                <img src="https://fsdhubcdn.phphub.org/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/60/h/60"
+                                <img src="{{Auth::user()->avatar}}"
                                      class="rounded-circle" width="30px" height="30px">
                             </span>
                             {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{route('users.show',Auth::id())}}">个人中心</a>
+                            <a class="dropdown-item" href="{{route('users.edit',Auth::id())}}">编辑资料</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                 退出登录

@@ -2,7 +2,8 @@
 @import "variables";
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
-
+//font-awesome
+@import "../font-awesome/css/fontawesome-all.min.css";
 /* universal */
 
 body {
@@ -60,5 +61,12 @@ body {
     margin-bottom: 0px;
     margin-top: 10px;
     cursor: pointer;
+  }
+}
+
+/* User Edit page */
+.users-edit-page {
+  .img-thumbnail {
+    margin-top: 10px;
   }
 }

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', '用户注册')
 @section('content')
     <div class="container">
         <div class="row justify-content-md-center mt-5">

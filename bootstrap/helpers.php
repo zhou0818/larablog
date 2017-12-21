@@ -11,6 +11,16 @@ function make_excerpt($value, $length = 200)
     return str_limit($excerpt, $length);
 }
 
+function validate_error($errors)
+{
+    $error_str = '';
+    foreach ($errors as $error) {
+        $error_str .= '<div class="invalid-feedback">' . $error . '</div>';
+    }
+    return $error_str;
+}
+
+
 function model_admin_link($title, $model)
 {
     return model_link($title, $model, 'admin');
