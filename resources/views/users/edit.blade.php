@@ -13,7 +13,7 @@
 
                     <div class="form-group">
                         <label for="name-field">用户名</label>
-                        <input class="{{$errors->has('name')?'form-control is-invalid':'form-control'}}" type="text"
+                        <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" type="text"
                                name="name" id="name-field"
                                value="{{ old('name', $user->name ) }}"/>
                         @if($errors->has('name'))
@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-group">
                         <label for="email-field">邮 箱</label>
-                        <input class="{{$errors->has('email')?'form-control is-invalid':'form-control'}}" type="text"
+                        <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" type="text"
                                name="email" id="email-field"
                                value="{{ old('email', $user->email ) }}"/>
                         @if($errors->has('email'))
@@ -32,7 +32,7 @@
                     <div class="form-group">
                         <label for="introduction-field">个人简介</label>
                         <textarea name="introduction" id="introduction-field"
-                                  class="{{$errors->has('introduction')?'form-control is-invalid':'form-control'}}"
+                                  class="form-control{{ $errors->has('introduction') ? ' is-invalid' : '' }}"
                                   rows="3">{{ old('introduction', $user->introduction ) }}</textarea>
                         @if($errors->has('introduction'))
                             {!! validate_error($errors->get('introduction')) !!}
@@ -43,7 +43,7 @@
                         <br/>
                         <label class="custom-file">
                             <input type="file" id="avatar_field" name="avatar"
-                                   class="{{$errors->has('avatar')?'custom-file-input is-invalid':'custom-file-input'}}"
+                                   class="form-control{{ $errors->has('avatar') ? ' is-invalid' : '' }}"
                                    onchange="$(this).next().after().text($(this).val().split('\\').slice(-1)[0])">
                             <span class="custom-file-control"></span>
                             @if($errors->has('avatar'))
