@@ -55,7 +55,7 @@
                             <img class="img-thumbnail" src="{{ $user->avatar }}" width="200"/>
                         @endif
                     </div>
-                    <button type="submit" class="btn btn-dark">保存</button>
+                    <button type="submit" class="btn btn-primary">保存</button>
                 </form>
             </div>
         </div>

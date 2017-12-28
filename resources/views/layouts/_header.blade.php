@@ -10,16 +10,16 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item {{ active_class(if_route('articles.index')) }}">
-                    <a class="nav-link" href="{{ route('articles.index') }}"><i class="fas fa-code"></i> 所有文章</a>
+                    <a class="nav-link" href="{{ route('articles.index') }}"><i class="fas fa-code"></i>所有文章</a>
                 </li>
                 <li class="nav-item {{ active_class((if_route('categories.show')&&if_route_param('category',1))) }}">
-                    <a class="nav-link" href="{{ route('categories.show',1) }}"><i class="fab fa-python"></i> 玩蛇之路</a>
+                    <a class="nav-link" href="{{ route('categories.show',1) }}"><i class="fab fa-python"></i>玩蛇之路</a>
                 </li>
                 <li class="nav-item {{ active_class((if_route('categories.show')&&if_route_param('category',2))) }}">
-                    <a class="nav-link" href="{{ route('categories.show',2) }}"><i class="fab fa-laravel"></i> laravel踩坑</a>
+                    <a class="nav-link" href="{{ route('categories.show',2) }}"><i class="fab fa-laravel"></i>laravel踩坑</a>
                 </li>
                 <li class="nav-item {{ active_class((if_route('categories.show')&&if_route_param('category',3))) }}">
-                    <a class="nav-link" href="{{ route('categories.show',3) }}"><i class="fab fa-vuejs"></i> Vue探索</a>
+                    <a class="nav-link" href="{{ route('categories.show',3) }}"><i class="fab fa-vuejs"></i>Vue探索</a>
                 </li>
             </ul>
             <!-- Right Side Of Navbar -->
@@ -39,11 +39,13 @@
                             {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('users.show',Auth::id()) }}">个人中心</a>
-                            <a class="dropdown-item" href="{{ route('users.edit',Auth::id()) }}">编辑资料</a>
+                            <a class="dropdown-item" href="{{ route('users.show',Auth::id()) }}">
+                                <i class="fas fa-user"></i>个人中心</a>
+                            <a class="dropdown-item" href="{{ route('users.edit',Auth::id()) }}">
+                                <i class="fas fa-edit"></i>编辑资料</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                退出登录
+                                <i class="fas fa-sign-out-alt"></i>退出登录
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                       style="display: none;">
                                     {{ csrf_field() }}

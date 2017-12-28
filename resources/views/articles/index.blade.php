@@ -13,11 +13,11 @@
                 <div class="card-header">
                     <ul class="nav nav-pills card-header-pills">
                         <li class="nav-item">
-                            <a class="nav-link {{ !if_query('order','recent_replies')?'':'text-dark' }} {{ active_class(!if_query('order','recent_replies'),'active bg-dark') }}"
+                            <a class="nav-link {{ active_class(!if_query('order','recent_replies')) }}"
                                href="{{ Request::url() }}?order=default">最新发布</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ if_query('order','recent_replies')?'':'text-dark' }} {{ active_class(if_query('order','recent_replies'),'active bg-dark') }}"
+                            <a class="nav-link {{ active_class(if_query('order','recent_replies')) }}"
                                href="{{ Request::url() }}?order=recent_replies">最后回复</a>
                         </li>
                     </ul>

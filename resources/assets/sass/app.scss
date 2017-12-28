@@ -19,6 +19,23 @@ body {
   border-top: 4px solid #000000;
   margin-bottom: 40px;
   margin-top: 0;
+  .nav-item {
+    i {
+      margin-right: 8px;
+    }
+  }
+  .dropdown-menu {
+    padding: 0;
+
+    a {
+      border-bottom: 1px solid #d8d8d8;
+      line-height: 2.4;
+
+      i {
+        margin-right: 8px;
+      }
+    }
+  }
 }
 
 /* Sticky footer styles */
@@ -38,7 +55,7 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #000;
+  background-color: #343a40;
 
   .container {
     padding-right: 15px;
@@ -68,6 +85,21 @@ body {
 .users-edit-page {
   .img-thumbnail {
     margin-top: 10px;
+  }
+}
+
+/* User profile page */
+.users-show-page {
+  .list-group {
+    .list-group-item {
+      border: none;
+      margin-bottom: 0;
+      border-bottom: 1px solid #efefef;
+    }
+  }
+
+  .pagination {
+    margin: 12px 0;
   }
 }
 

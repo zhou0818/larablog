@@ -95,7 +95,7 @@
 
                             <div class="form-group row">
                                 <div class="col-lg-6 offset-lg-4">
-                                    <button type="submit" class="btn btn-dark btn-block">
+                                    <button type="submit" class="btn btn-primary btn-block">
                                         注册
                                     </button>
                                 </div>
