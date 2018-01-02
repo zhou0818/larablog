@@ -46,4 +46,10 @@ class Article extends Model
         // 按照创建时间排序
         return $query->orderBy('created_at', 'desc');
     }
+
+    public function link($params = [])
+    {
+        //array_merge()将多个数组合并为一个
+        return route('articles.show', array_merge([$this->id, $this->slug], $params));
+    }
 }

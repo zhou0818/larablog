@@ -30,6 +30,9 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
 
-Route::resource('articles', 'ArticlesController', ['only' => ['index', 'show']]);
+Route::resource('articles', 'ArticlesController',
+    ['only' => ['index', 'create', 'edit', 'update', 'store', 'destroy']]);
+Route::get('articles/{article}/{slug?}', 'ArticlesController@show')->name('articles.show');
+Route::post('upload_image', 'ArticlesController@uploadImage')->name('articles.upload_image');
 
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);

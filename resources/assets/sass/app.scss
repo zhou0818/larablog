@@ -36,6 +36,11 @@ body {
       }
     }
   }
+  img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+  }
 }
 
 /* Sticky footer styles */
@@ -101,6 +106,14 @@ body {
   .pagination {
     margin: 12px 0;
   }
+
+  .user-info {
+    img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+  }
 }
 
 /* Article Index page */
@@ -108,5 +121,40 @@ body {
   .article-img {
     max-height: 350px;
     object-fit: cover;
+  }
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Article Show page */
+@import "article_body";
+
+.articles-show-page {
+  .article-body {
+    padding: 15px;
+  }
+  .card {
+    margin-bottom: 20px;
+
+    h1 {
+      margin: 0.4em auto 0.6em;
+      font-size: 28px;
+      line-height: 38px;
+    }
+  }
+  .author-info {
+    img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+  }
+}
+
+/* Article Create_Edit page */
+.articles-create-page, .articles-edit-page {
+  .img-thumbnail {
+    margin-top: 10px;
   }
 }

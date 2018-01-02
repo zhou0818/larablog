@@ -5,9 +5,11 @@
 
         <div class="col-lg-3 col-md-3 d-none d-sm-block user-info">
             <div class="card">
-                <img class="card-img-top"
-                     src="{{$user->avatar}}"
-                     alt={{$user->name}} ."的头像">
+                <div class="text-center">
+                    <img class="rounded-circle img-thumbnail mt-3"
+                         src="{{$user->avatar}}"
+                         alt={{$user->name}} ."的头像">
+                </div>
                 <div class="card-body">
                     <hr>
                     <h4><strong>个人简介</strong></h4>
@@ -46,7 +48,7 @@
                     </ul>
                 </div>
                 <div class="card-body">
-                    @include('users._articles',['articles'=>$user->articles()->recent()->paginate(5)])
+                    @include('users._articles',['articles'=>$user->articles()->recent()->simplePaginate(5)])
                 </div>
             </div>
         </div>

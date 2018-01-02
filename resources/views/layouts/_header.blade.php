@@ -29,12 +29,14 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">登录</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">注册</a></li>
                 @else
+                    <li class="nav-item"><a class="nav-link" href="{{ route('articles.create') }}"><i
+                                    class="fas fa-plus"></i></a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span style="margin-right:8px; margin-top:-5px;">
                                 <img src="{{ Auth::user()->avatar }}"
-                                     class="rounded-circle" width="30px" height="30px">
+                                     class="rounded-circle">
                             </span>
                             {{ Auth::user()->name }}
                         </a>
