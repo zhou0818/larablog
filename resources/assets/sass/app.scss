@@ -8,6 +8,9 @@
 
 body {
   font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+  a:hover {
+    text-decoration: none
+  }
 }
 
 /* header */
@@ -100,6 +103,9 @@ body {
       border: none;
       margin-bottom: 0;
       border-bottom: 1px solid #efefef;
+      i {
+        margin-right: 8px;
+      }
     }
   }
 
@@ -143,11 +149,22 @@ body {
       line-height: 38px;
     }
   }
+  .list-group {
+    margin-bottom: 20px;
+  }
   .author-info {
     img {
       width: 120px;
       height: 120px;
       object-fit: cover;
+    }
+  }
+  .reply-box {
+    margin-bottom: 20px;
+  }
+  .reply-contents {
+    a {
+      color: #1e70bf;
     }
   }
 }
@@ -156,5 +173,12 @@ body {
 .articles-create-page, .articles-edit-page {
   .img-thumbnail {
     margin-top: 10px;
+  }
+}
+
+/* Notification index page */
+.notifications-index-page {
+  a {
+    color: #1e70bf;
   }
 }

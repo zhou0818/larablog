@@ -40,15 +40,21 @@
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Ta 的文章</a>
+                            <a class="nav-link {{ active_class(if_query('tab',null)) }}"
+                               href="{{ route('users.show',$user->id) }}">Ta 的文章</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Ta 的回复</a>
+                            <a class="nav-link {{ active_class(if_query('tab','replies')) }}"
+                               href="{{ route('users.show',[$user->id,'tab'=>'replies']) }}">Ta 的回复</a>
                         </li>
                     </ul>
                 </div>
                 <div class="card-body">
-                    @include('users._articles',['articles'=>$user->articles()->recent()->simplePaginate(5)])
+                    @if (if_query('tab', 'replies'))
+                        @include('users._replies', ['replies' => $user->replies()->with('article')->recent()->simplePaginate(5)])
+                    @else
+                        @include('users._articles',['articles'=>$user->articles()->recent()->simplePaginate(5)])
+                    @endif
                 </div>
             </div>
         </div>

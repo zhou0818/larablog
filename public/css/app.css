@@ -9737,6 +9737,10 @@ body {
   font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial, sans-serif;
 }
 
+body a:hover {
+  text-decoration: none;
+}
+
 /* header */
 
 .navbar-header {
@@ -9828,6 +9832,10 @@ body {
   border: none;
   margin-bottom: 0;
   border-bottom: 1px solid #efefef;
+}
+
+.users-show-page .list-group .list-group-item i {
+  margin-right: 8px;
 }
 
 .users-show-page .pagination {
@@ -10326,6 +10334,10 @@ body {
   line-height: 38px;
 }
 
+.articles-show-page .list-group {
+  margin-bottom: 20px;
+}
+
 .articles-show-page .author-info img {
   width: 120px;
   height: 120px;
@@ -10333,10 +10345,24 @@ body {
      object-fit: cover;
 }
 
+.articles-show-page .reply-box {
+  margin-bottom: 20px;
+}
+
+.articles-show-page .reply-contents a {
+  color: #1e70bf;
+}
+
 /* Article Create_Edit page */
 
 .articles-create-page .img-thumbnail,
 .articles-edit-page .img-thumbnail {
   margin-top: 10px;
+}
+
+/* Notification index page */
+
+.notifications-index-page a {
+  color: #1e70bf;
 }
 

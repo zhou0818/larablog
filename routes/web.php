@@ -36,3 +36,6 @@ Route::get('articles/{article}/{slug?}', 'ArticlesController@show')->name('artic
 Route::post('upload_image', 'ArticlesController@uploadImage')->name('articles.upload_image');
 
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
+
+Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
+Route::resource('notifications', 'NotificationsController', ['only' => ['index']]);

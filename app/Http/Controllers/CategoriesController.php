@@ -10,7 +10,7 @@ class CategoriesController extends Controller
 {
     public function show(Category $category, Request $request, Article $article)
     {
-        $articles = $article->withOrder($request->order)->where('category_id', $category->id)->paginate(10);
+        $articles = $article->withOrder($request->order)->where('category_id', $category->id)->simplePaginate(10);
         return view('articles.index', compact('articles', 'category'));
     }
 }

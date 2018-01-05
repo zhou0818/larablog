@@ -5,7 +5,7 @@ use App\Models\Article;
 use App\Models\User;
 use App\Models\Category;
 
-class ArticlesTableSeed extends Seeder
+class ArticlesTableSeeder extends Seeder
 {
     public function run()
     {

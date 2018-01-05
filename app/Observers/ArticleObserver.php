@@ -26,4 +26,9 @@ class ArticleObserver
             dispatch(new TranslateSlug($article));
         }
     }
+
+    public function deleted(Article $article)
+    {
+        \DB::table('articles')->where('article_id', $article->id)->delete();
+    }
 }
