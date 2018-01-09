@@ -11,7 +11,7 @@
             @endif
         </div>
         <div class="text-right">
-            <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-reply mr-1"></i>回复</button>
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane mr-1"></i>回复</button>
         </div>
     </form>
 </div>

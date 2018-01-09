@@ -21,7 +21,7 @@
                     <div class="d-inline-flex">
                         <a href="#contents" class="p-1" title="回复"
                            onclick="reply_somebody('{{ $reply->user->name }}')">
-                            <i class="fas fa-reply"></i>
+                            <i class="fas fa-paper-plane"></i>
                         </a>
                         @can('destroy',[$reply,$article])
                             <form action="{{ route('replies.destroy',$reply->id) }}" method="post">

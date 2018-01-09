@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Models\Article;
 use App\Models\Reply;
+use App\Models\User;
 use App\Observers\ArticleObserver;
 use App\Observers\ReplyObserver;
+use App\Observers\UserObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Article::observe(ArticleObserver::class);
         Reply::observe(ReplyObserver::class);
+        User::observe(UserObserver::class);
         \Carbon\Carbon::setLocale('zh');
     }
 
@@ -29,6 +32,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if (app()->isLocal()) {
+            $this->app->register(\VIACreative\SudoSu\ServiceProvider::class);
+        }
     }
 }

@@ -1,22 +1,25 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-header">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('root') }}">LaraBlog</a>
-        <div class="d-inline-flex">
-            <a class="nav-link d-md-block d-lg-none d-xl-none"
-               href="{{ route('articles.create') }}"><i
-                        class="fas fa-plus text-muted"></i></a>
-            <a class="nav-link d-md-block d-lg-none d-xl-none" href="{{ route('notifications.index') }}">
+        <a class="navbar-brand" href="{{ route('root') }}">Mr.Zhou Blog</a>
+        @auth
+            <div class="d-inline-flex">
+                @can('manage_contents')
+                    <a class="nav-link d-md-block d-lg-none d-xl-none"
+                       href="{{ route('articles.create') }}"><i
+                                class="fas fa-plus text-muted"></i></a>
+                @endcan
+                <a class="nav-link d-md-block d-lg-none d-xl-none" href="{{ route('notifications.index') }}">
                             <span class="badge badge-{{ Auth::user()->notification_count > 0 ? 'danger' : 'secondary' }} "
                                   title="消息提醒">
                                 {{ Auth::user()->notification_count }}
                             </span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-                    aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        @endauth
 
         <div class="collapse navbar-collapse" id="navbarToggler">
             <!-- Left Side Of Navbar -->
@@ -41,9 +44,11 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">登录</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">注册</a></li>
                 @else
-                    <li class="nav-item d-none d-lg-block d-xl-block"><a class="nav-link"
-                                                                         href="{{ route('articles.create') }}"><i
-                                    class="fas fa-plus"></i></a></li>
+                    @can('manage_contents')
+                        <li class="nav-item d-none d-lg-block d-xl-block"><a class="nav-link"
+                                                                             href="{{ route('articles.create') }}"><i
+                                        class="fas fa-plus"></i></a></li>
+                    @endcan
                     <li class="nav-item d-none d-lg-block d-xl-block"><a class="nav-link mr-2"
                                                                          href="{{ route('notifications.index') }}">
                             <span class="badge badge-{{ Auth::user()->notification_count > 0 ? 'danger' : 'secondary' }} "
@@ -61,6 +66,10 @@
                             {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @can('manage_contents')
+                                <a class="dropdown-item" href="{{ url(config('administrator.uri')) }}">
+                                    <i class="fas fa-cog"></i>管理后台</a>
+                            @endcan
                             <a class="dropdown-item" href="{{ route('users.show',Auth::id()) }}">
                                 <i class="fas fa-user"></i>个人中心</a>
                             <a class="dropdown-item" href="{{ route('users.edit',Auth::id()) }}">

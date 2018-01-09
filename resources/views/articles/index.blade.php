@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-3">
-            @includeWhen(Auth::check(), 'articles._sidebar')
+            @include('articles._sidebar')
         </div>
     </div>
 @stop
