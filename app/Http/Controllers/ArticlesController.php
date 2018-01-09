@@ -31,6 +31,7 @@ class ArticlesController extends Controller
 
     public function show(Request $request, Article $article)
     {
+        $article->increment('click_count');
         // URL 矫正
         if (!empty($article->slug) && $article->slug != $request->slug) {
             return redirect($article->link(), 301);

@@ -24,6 +24,8 @@
                         <i class="far fa-user"></i>
                         <small>{{ $article->user->name }}</small>
                     </a>
+                    <i class="far fa-hand-point-up text-muted"></i>
+                    <small class="text-muted mr-3" title="点击数">{{ $article->click_count }}</small>
                     <i class="far fa-clock text-muted"></i>
                     <small class="text-muted mr-3" title="最后活跃于">{{ $article->updated_at->diffForHumans() }}</small>
                 </p>
